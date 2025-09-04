@@ -1,0 +1,43 @@
+:root{
+  --bg:#000; --text:#fff; --muted:#d3d3d3;
+  --accent:#1E90FF; --neon:#39FF14;
+}
+html,body{background:var(--bg); color:var(--text); font-family:'Roboto',system-ui,-apple-system,Segoe UI,Arial;}
+a{color:var(--accent)} a:hover{color:#66b8ff}
+.text-neon{color:var(--neon)}
+.navbar .brand-title{font-family:'Orbitron', sans-serif; letter-spacing:.5px}
+.section-title{font-family:'Orbitron', sans-serif; font-weight:800}
+.title-glow{text-shadow:0 0 10px rgba(57,255,20,.6), 0 0 20px rgba(30,144,255,.5)}
+.border-neon{border-color:rgba(57,255,20,.4)!important}
+.info-card{background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08);}
+.card{background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1);}
+
+.btn-neon{
+  background: linear-gradient(90deg, var(--neon), var(--accent));
+  border:0; color:#000; font-weight:700;
+  box-shadow:0 0 12px rgba(57,255,20,.4), 0 0 16px rgba(30,144,255,.3);
+}
+.btn-neon:hover{filter:brightness(1.1)}
+.btn-outline-neon{
+  border:2px solid var(--neon); color:var(--text); background:transparent;
+  box-shadow:0 0 8px rgba(57,255,20,.3);
+}
+.btn-outline-neon:hover{background: rgba(57,255,20,.15)}
+
+.hero{background: radial-gradient(1200px 400px at 50% -20%, rgba(30,144,255,.2), transparent),
+                 radial-gradient(1200px 400px at 50% 120%, rgba(57,255,20,.2), transparent);}
+
+.form-control,.form-select,.form-range{background:#0b0b0b; color:var(--text); border:1px solid rgba(255,255,255,.15)}
+.form-control:focus,.form-select:focus{border-color: var(--accent); box-shadow: 0 0 0 .25rem rgba(30,144,255,.25)}
+.card .price{color:var(--neon); font-weight:700}
+
+.whatsapp-float{
+  position:fixed; right:18px; bottom:18px; display:inline-flex; justify-content:center; align-items:center;
+  width:56px; height:56px; border-radius:50%; background:#25D366; color:white; font-size:28px;
+  box-shadow:0 6px 18px rgba(0,0,0,.4); z-index:1000;
+}
+
+/* Tema claro para accesibilidad */
+:root[data-theme='light']{ --bg:#f9fafb; --text:#111; --muted:#333; }
+:root[data-theme='light'] .info-card, :root[data-theme='light'] .card{background:#fff;border-color:#e5e7eb}
+:root[data-theme='light'] .navbar{background:#111!important}

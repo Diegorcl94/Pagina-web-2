@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio | LevelUp Neon</title>
+  <meta name="description" content="Catálogo gamer, blog, eventos y comunidad.">
+  <!-- CDNs + CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body data-page="home">
+  <!-- NAV (Bootstrap navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo.png" width="36" height="36" class="rounded" alt="LevelUp"><span class="brand-title">LEVEL-UP GAMER</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><span class="navbar-toggler-icon"></span></button>
+      <div id="navMain" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="productos.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="soporte.html">Soporte</a></li>
+          <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="bi bi-cart"></i> Carrito</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-neon" href="perfil.html"><i class="bi bi-person"></i> Perfil</a>
+          <a class="btn btn-neon" href="registro.html">Regístrate</a>
+          <a class="btn btn-outline-neon" href="login.html">Ingresar</a>
+          <button class="btn btn-outline-neon" id="btnToggleTheme"><i class="bi bi-brightness-high"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CARRUSEL (Bootstrap Carousel) -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <img src="img/slide1.jpg" class="d-block w-100" alt="Nuevos lanzamientos">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="section-title">Nuevos lanzamientos</h5>
+          <p class="text-light">Consolas y periféricos con descuento para estudiantes DUOC (+20% de por vida).</p>
+          <a href="productos.html" class="btn btn-neon btn-sm">Ver catálogo</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="img/slide2.jpg" class="d-block w-100" alt="Eventos y torneos">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="section-title">Eventos y torneos</h5>
+          <p class="text-light">Gana puntos LevelUp asistiendo a eventos nacionales.</p>
+          <a href="eventos.html" class="btn btn-outline-neon btn-sm">Ver mapa de eventos</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="img/slide3.jpg" class="d-block w-100" alt="Comunidad y blog">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="section-title">Comunidad y blog</h5>
+          <p class="text-light">Tips, reseñas y noticias para mejorar tu experiencia gamer.</p>
+          <a href="blog.html" class="btn btn-outline-neon btn-sm">Ir al blog</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- HERO (lo mantenemos debajo del carrusel) -->
+  <header class="hero text-center text-white py-5">
+    <div class="container">
+      <h1 class="display-5 fw-bold title-glow">Tu próxima aventura comienza aquí</h1>
+      <p class="lead text-secondary">Ofertas, comunidad y eventos. Gana puntos LevelUp con referidos.</p>
+      <div class="d-flex gap-3 justify-content-center mt-3">
+        <a class="btn btn-neon btn-lg" href="productos.html#catalogo">Explorar Catálogo</a>
+        <a class="btn btn-outline-neon btn-lg" href="eventos.html">Ver Eventos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BÚSQUEDA AVANZADA -->
+  <section class="container my-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">Búsqueda Avanzada</h2>
+        <form id="searchForm" class="row g-2">
+          <div class="col-12"><input id="searchInput" class="form-control form-control-lg" placeholder="Busca productos..." /></div>
+          <div class="col-md-4">
+            <select id="categorySelect" class="form-select">
+              <option value="">Todas</option>
+              <option>Juegos de Mesa</option><option>Accesorios</option><option>Consolas</option>
+              <option>Computadores Gamers</option><option>Sillas Gamers</option><option>Mouse</option>
+              <option>Mousepad</option><option>Poleras Personalizadas</option><option>Polerones Gamers Personalizados</option>
+              <option>Servicio Técnico</option>
+            </select>
+          </div>
+          <div class="col-md-4"><input type="number" id="minPrice" class="form-control" placeholder="Precio mínimo"></div>
+          <div class="col-md-4"><input type="number" id="maxPrice" class="form-control" placeholder="Precio máximo"></div>
+          <div class="col-12 d-grid d-md-flex gap-2">
+            <button class="btn btn-neon" type="submit"><i class="bi bi-search"></i> Buscar</button>
+            <button class="btn btn-outline-neon" id="btnClearFilters" type="button">Limpiar</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="info-card p-4 rounded-4">
+          <h3 class="mb-2">Impacto Comunitario</h3>
+          <p class="mb-2">Apoyamos eventos locales y streamers chilenos. Parte de las compras financia torneos y becas gamer.</p>
+          <div class="small text-secondary">Tus puntos LevelUp pueden canjearse por descuentos y productos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Productos Destacados</h2>
+      <a class="btn btn-sm btn-outline-neon" href="productos.html">Ver todo</a>
+    </div>
+    <div id="featuredGrid" class="row g-3"></div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Últimas del Blog</h2>
+      <a class="btn btn-sm btn-outline-neon" href="blog.html">Ver blog</a>
+    </div>
+    <div id="blogPreview" class="row g-3"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 border-top border-neon mt-5">
+    <div class="container small text-secondary d-flex justify-content-between flex-wrap">
+      <span>© 2025 LevelUp Neon — Proyecto educativo</span>
+      <div class="d-flex gap-3">
+        <a href="#" class="link-secondary share-btn" data-title="LevelUp Neon" data-url="index.html"><i class="bi bi-share"></i> Compartir</a>
+        <a href="https://wa.me/56912345678?text=Hola%20necesito%20soporte%20técnico" class="link-secondary"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón WhatsApp flotante -->
+  <a href="https://wa.me/56912345678?text=Hola%20vengo%20de%20LevelUp%20Neon" class="whatsapp-float" target="_blank" aria-label="WhatsApp Soporte"><i class="bi bi-whatsapp"></i></a>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="JS/main.js"></script>
+</body>
+</html>
