@@ -9,27 +9,70 @@
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body data-page="login">
-  <!-- NAV corta -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top">
+  <!-- VIDEO DE FONDO -->
+  <video
+    id="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    poster="img/login-poster.jpg"
+  >
+    <source src="video/fondo-login.mp4" type="video/mp4">
+    <source src="video/fondo-login.webm" type="video/webm">
+    Tu navegador no soporta videos HTML5.
+  </video>
+
+  <!-- NAV simple -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top" style="position: relative; z-index: 2;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="img/logo.png" width="36" height="36" class="rounded"><span class="brand-title">LEVEL-UP GAMER</span>
+        <img src="img/logo.png" width="36" height="36" class="rounded" alt="LevelUp">
+        <span class="brand-title">LEVEL-UP GAMER</span>
       </a>
-      <div class="d-flex gap-2"><button class="btn btn-outline-neon" id="btnToggleTheme"><i class="bi bi-brightness-high"></i></button></div>
+      <div class="d-flex gap-2">
+        <button class="btn btn-outline-neon" id="btnToggleTheme" title="Cambiar tema">
+          <i class="bi bi-brightness-high"></i>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <main class="container py-5" style="max-width:720px">
-    <h1 class="section-title mb-4">Iniciar Sesión</h1>
-    <form id="loginForm" class="info-card p-4 rounded-4 needs-validation" novalidate>
-      <div class="mb-3"><label class="form-label">Correo</label><input type="email" id="email" class="form-control form-control-lg" required><div class="invalid-feedback">Ingresa un correo válido.</div></div>
-      <div class="mb-3"><label class="form-label">Contraseña</label><input type="password" id="password" class="form-control form-control-lg" minlength="6" required><div class="invalid-feedback">Mínimo 6 caracteres.</div></div>
-      <div class="d-grid gap-2">
-        <button class="btn btn-neon btn-lg" type="submit">Entrar</button>
-        <a class="btn btn-outline-neon" href="registro.html">Crear cuenta</a>
-      </div>
-    </form>
+  <!-- FORMULARIO LOGIN -->
+  <main class="d-flex align-items-center justify-content-center min-vh-100" style="position: relative; z-index: 2;">
+    <div class="container" style="max-width: 500px;">
+      <form id="loginForm" class="info-card p-4 rounded-4 needs-validation" novalidate>
+        <h1 class="section-title mb-4 text-center">Iniciar Sesión</h1>
+
+        <div class="mb-3">
+          <label class="form-label">Correo</label>
+          <input type="email" id="email" class="form-control form-control-lg" required>
+          <div class="invalid-feedback">Ingresa un correo válido.</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Contraseña</label>
+          <input type="password" id="password" class="form-control form-control-lg" minlength="6" required>
+          <div class="invalid-feedback">Mínimo 6 caracteres.</div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-neon btn-lg" type="submit">Entrar</button>
+          <a class="btn btn-outline-neon" href="registro.html">Crear cuenta</a>
+        </div>
+      </form>
+    </div>
   </main>
+
+  <!-- Debug opcional: ver en consola si carga -->
+  <script>
+    const v = document.getElementById('bg-video');
+    v?.addEventListener('error', () => console.warn('Error cargando el video. Revisa ruta/códec.'));
+    v?.addEventListener('loadeddata', () => console.log('Video cargado.'));
+    v?.play?.().catch(e => console.warn('Autoplay bloqueado:', e));
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="JS/main.js"></script>

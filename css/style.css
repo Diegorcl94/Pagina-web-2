@@ -38,6 +38,147 @@ a{color:var(--accent)} a:hover{color:#66b8ff}
 }
 
 /* Tema claro para accesibilidad */
-:root[data-theme='light']{ --bg:#f9fafb; --text:#111; --muted:#333; }
+:root[data-theme='light']{ --bg:#010810; --text:#caa3a3; --muted:#333; }
 :root[data-theme='light'] .info-card, :root[data-theme='light'] .card{background:#fff;border-color:#e5e7eb}
 :root[data-theme='light'] .navbar{background:#111!important}
+
+/* Carrusel compacto */
+.carousel--compact .carousel-item img{
+  width: 100%;
+  height: 420px;      /* 👈 altura principal del carrusel en pantallas medianas+ */
+  object-fit: cover;  /* recorta sin deformar la imagen */
+  object-position: center;
+  display: block;
+}
+
+/* En celulares lo hacemos un poco más bajo */
+@media (max-width: 576px){
+  .carousel--compact .carousel-item img{
+    height: 280px;    /* 👈 ajusta si quieres aún más bajo en móvil */
+  }
+}
+
+/* En pantallas grandes puedes subir un poquito si te gusta */
+@media (min-width: 1200px){
+  .carousel--compact .carousel-item img{
+    height: 480px;    /* 👈 opcional: más alto en desktop grande */
+  }
+}
+
+/* Carrusel compacto (controla altura sin deformar) */
+.carousel--compact .carousel-item img{
+  width: 100%;
+  height: 420px;      /* cambia aquí si lo quieres más bajo/alto */
+  object-fit: cover;  /* recorta sin deformar */
+  object-position: center;
+  display: block;
+}
+
+/* Más bajo en móvil */
+@media (max-width: 576px){
+  .carousel--compact .carousel-item img{ height: 280px; }
+}
+
+/* Ligeramente más alto en desktop grande */
+@media (min-width: 1200px){
+  .carousel--compact .carousel-item img{ height: 480px; }
+}
+
+/* Carrusel adaptable con aspect-ratio */
+.carousel--compact .carousel-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 👈 relación de aspecto fija */
+  object-fit: cover;      /* recorta sin deformar */
+  object-position: center;
+  display: block;
+}
+
+/* Estilo general del texto en el carrusel */
+.carousel-caption h5 {
+  color: #1effa1;     /* Azul eléctrico */
+  font-size: 3rem;    /* 👈 tamaño del título (ej: 2rem = ~32px) */
+  font-weight: 700;   /* negrita */
+  text-shadow: 0 0 10px rgba(247, 245, 245, 0.8);
+}
+
+.carousel-caption p {
+  color: #D3D3D3;     /* Gris claro */
+  font-size: 1.2rem;  /* 👈 tamaño del párrafo (ej: 1.2rem = ~19px) */
+  font-weight: 400;   /* normal */
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+  padding: 1rem;                 /* Espaciado interno */
+  border-radius: 8px;            /* Bordes redondeados */
+}
+
+
+
+/* VIDEO DE FONDO LOGIN */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* recorta sin deformar */
+  z-index: -1;         /* detrás de todo */
+}
+
+/* Capa oscura encima del video para legibilidad */
+body[data-page="login"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta sin deformar */
+  z-index: -1;
+}
+
+body[data-page="login"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* capa oscura */
+  z-index: 0;
+}
+
+/* VIDEO DE FONDO LOGIN */
+#bg-video{
+  position: fixed;
+  inset: 0;          /* top, right, bottom, left = 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* llena sin deformar */
+  z-index: 0;        /* detrás del overlay y contenido, pero visible */
+}
+
+/* Capa oscura encima del video para legibilidad */
+body[data-page="login"]::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* ajusta opacidad si lo ves muy oscuro */
+  z-index: 1;
+}
+/* Asegura que el contenido esté encima del video y overlay */
+body[data-page="login"] > *{
+  position: relative;
+  z-index: 2;
+}
