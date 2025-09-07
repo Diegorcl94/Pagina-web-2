@@ -182,3 +182,20 @@ body[data-page="login"] > *{
   position: relative;
   z-index: 2;
 }
+
+  <style>
+    :root{ --bg:#000; --text:#fff; --muted:#d3d3d3; --accent:#1E90FF; --neon:#39FF14; }
+    html,body{ background:var(--bg); color:var(--text); font-family:'Roboto',system-ui; }
+    a{ color:var(--accent) } a:hover{ color:#66b8ff }
+    .brand-title{ font-family:'Orbitron',sans-serif; letter-spacing:.5px }
+    .section-title{ font-family:'Orbitron',sans-serif; font-weight:800 }
+    .title-glow{ text-shadow:0 0 10px rgba(57,255,20,.6), 0 0 20px rgba(30,144,255,.5) }
+    .border-neon{ border-color:rgba(57,255,20,.4)!important }
+    .info-card,.card{ background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); }
+    .badge-neon{ background:rgba(57,255,20,.12); border:1px solid rgba(57,255,20,.4); color:var(--neon) }
+    .btn-outline-neon{ color:var(--neon); border:1px solid rgba(57,255,20,.5) }
+    .btn-outline-neon:hover{ background:rgba(57,255,20,.12); color:var(--neon) }
+    .event-img{ aspect-ratio:16/9; object-fit:cover; }
+    #map{ height:420px }
+  </style>
+</head>
