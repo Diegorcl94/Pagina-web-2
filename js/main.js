@@ -60,6 +60,8 @@ const PRODUCTS = [
     desc: 'Clásico de estrategia para 3-4 jugadores.', img: 'img/catan.jpg' },
   { code: 'JM002', category: 'Juegos de Mesa', name: 'Carcassonne', price: 24990,
     desc: 'Juego de losetas medieval, 2-5 jugadores.', img: 'img/carcassoneazul.jpg' },
+
+  
   { code: 'AC001', category: 'Accesorios', name: 'Controlador Xbox Series X', price: 59990,
     desc: 'Botones mapeables y respuesta táctil mejorada.', img: 'img/controlxbox.jpg' },
   { code: 'AC002', category: 'Accesorios', name: 'HyperX Cloud II', price: 79990,
@@ -74,6 +76,7 @@ const PRODUCTS = [
     desc: 'Mouse de precisión con botones programables.', img: 'img/mousegamer.jpg' },
   { code: 'MP001', category: 'Mousepad', name: 'Razer Goliathus Chroma', price: 29990,
     desc: 'Mousepad con RGB personalizable.', img: 'img/padgamer.jpg' },
+    // juegos
   { code: 'jP001', category: 'Juegos', name: 'pes liga chilena', price: 2500,
     desc: 'juego para playstation 2 del clasico pes.', img: 'img/pesliga.png' },
   { code: 'jP002', category: 'Juegos', name: 'Super Mario 64', price: 11500,
@@ -84,6 +87,12 @@ const PRODUCTS = [
     desc: 'Explora el reino de Hyrule.', img: 'img/zeldataers.jpg' },
   { code: 'jP004', category: 'Juegos', name: 'guitar hero cumbia', price: 3500,
     desc: 'toca las mejores cumbias en este juego creado por fans.', img: 'img/guitarcumbia.jpg' },
+  { code: 'jP005', category: 'Juegos', name: 'Donkey kong country', price: 9990,
+    desc: 'El juego de plataformas más icónico.', img: 'img/donkeykongcountry.png' },
+  { code: 'jP006', category: 'Juegos', name: 'Donkey kong 2', price: 9990,
+    desc: 'La secuela del clásico juego de plataformas pero ahora el dos .', img: 'img/donkeykong2.jpg' },
+
+    // poleras personalizadas
   { code: 'PP001b', category: 'Poleras Personalizadas', name: "Polera Pibes chorros'", price: 14990,
     desc: 'Polera personalizada banda Pibes Chorros.', img: 'img/pibeschorros.png' },
   { code: 'PP001a', category: 'Poleras Personalizadas', name: "Polera Assasins Creed", price: 14990,
@@ -92,6 +101,10 @@ const PRODUCTS = [
     desc: 'Polera personalizada banda Los MOX.', img: 'img/LOSMOX.png' },
   { code: 'PP001c', category: 'Poleras Personalizadas', name: "Polera Doom'", price: 14990,
     desc: 'Polera personalizada Juego Doom.', img: 'img/poleradoom.png' },
+  { code: 'PP001d', category: 'Poleras Personalizadas', name: "Polera Sonic", price: 14990,
+    desc: 'Polera personalizada de Sonic.', img: 'img/Polerasonic.png' },
+  { code: 'PP001e', category: 'Poleras Personalizadas', name: "Polera FORNITE", price: 14990,
+    desc: 'Polera personalizada de FORNITE.', img: 'img/polerafornite.jpg' },
   { code: 'PP001c', category: 'Poleras Personalizadas', name: "Polera Gamer 'Level-Up'", price: 14990,
     desc: 'Polera personalizable con tu gamer tag.', img: 'img/poleramujer.png' },
 ];
