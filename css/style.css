@@ -252,3 +252,23 @@ body, p, h1, h2, h3, h4, h5, h6, small, a, span, li, label, button,
 .border-neon, .navbar.border-bottom, footer.border-top {
   border-color:var(--border)!important;
 }
+
+/* Placeholders en blanco */
+::placeholder {
+  color: #fff !important;
+  opacity: 0.6;   /* 👈 si quieres más tenue, sube/baja este valor */
+}
+
+.form-control::placeholder {
+  color: #fff !important;
+  opacity: 0.7;
+}
+.form-select { color: #fff; }
+.form-control, .form-select {
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,.15);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--neon);
+  box-shadow: 0 0 0 .25rem rgba(57,255,20,.25);
+}
