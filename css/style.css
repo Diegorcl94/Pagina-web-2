@@ -272,3 +272,48 @@ body, p, h1, h2, h3, h4, h5, h6, small, a, span, li, label, button,
   border-color: var(--neon);
   box-shadow: 0 0 0 .25rem rgba(57,255,20,.25);
 }
+
+/* ===== Registro: inputs legibles en fondo negro ===== */
+body[data-page="registro"] .form-label,
+body[data-page="registro"] .form-text {
+  color: #fff !important;
+}
+
+body[data-page="registro"] .form-control {
+  background-color: #0b0b0b !important;   /* fondo oscuro */
+  color: #fff !important;                  /* texto blanco */
+  border: 1px solid rgba(255,255,255,.18) !important;
+  caret-color: #39FF14;                    /* cursor visible estilo neón */
+}
+
+body[data-page="registro"] .form-control:focus {
+  border-color: #39FF14 !important;
+  box-shadow: 0 0 0 .25rem rgba(57,255,20,.25) !important;
+}
+
+/* Placeholders visibles sobre fondo negro */
+body[data-page="registro"] ::placeholder {
+  color: rgba(255,255,255,.70) !important;
+}
+
+/* Fix de AUTOFILL (Chrome/Edge) para que no ponga fondo claro con texto blanco */
+body[data-page="registro"] input:-webkit-autofill,
+body[data-page="registro"] input:-webkit-autofill:hover,
+body[data-page="registro"] input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #0b0b0b inset !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #39FF14;
+  transition: background-color 9999s ease-out 0s; /* truco para mantener el fondo */
+}
+
+/* ===== Soporte: campos blancos legibles sobre fondo negro ===== */
+body[data-page="soporte"] .form-control--light {
+  background: #fff !important;
+  color: #000 !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+}
+
+body[data-page="soporte"] .form-control--light::placeholder {
+  color: #555 !important;
+  opacity: 1 !important;
+}

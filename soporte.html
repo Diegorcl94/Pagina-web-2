@@ -2,33 +2,109 @@
 <html lang="es">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soporte | LevelUp Neon</title>
+  <title>Soporte | Level-Up Gamer</title>
+
+  <!-- Bootstrap / Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Tu CSS -->
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body data-page="soporte">
-  <!-- NAV estándar -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <img src="img/logo.png" width="36" height="36" class="rounded"><span class="brand-title">LEVEL-UP GAMER</span>
+        <img src="img/logo.png" width="36" height="36" class="rounded" alt="Logo">
+        <span class="brand-title">LEVEL-UP GAMER</span>
       </a>
-      <div class="d-flex gap-2"><button class="btn btn-outline-neon" id="btnToggleTheme"><i class="bi bi-brightness-high"></i></button></div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-neon" href="index.html"><i class="bi bi-house-door"></i></a>
+      </div>
     </div>
   </nav>
 
   <main class="container py-5">
     <h1 class="section-title mb-4">Soporte Técnico</h1>
+
+    <!-- Mensaje estilo aviso comercial -->
+    <div class="info-card p-4 rounded-4 mb-4">
+      <h5 class="mb-2">¿Necesitas reparación?</h5>
+      <p class="mb-0">
+        <strong>¿Tienes tu consola o PC en mal estado y necesitas arreglo?</strong> Escríbenos y te contactamos a la brevedad.
+      </p>
+    </div>
+
     <div class="row g-4">
       <div class="col-md-6">
-        <div class="
-info-card p-4 rounded-4">
+        <div class="info-card p-4 rounded-4">
           <h5 class="mb-3">Contáctanos</h5>
+
+          <!-- Aviso de confirmación (se muestra al enviar) -->
+          <div id="supportNotice" class="alert alert-success d-none" role="alert">
+            <i class="bi bi-check-circle-fill"></i>
+            ¡Gracias! Hemos recibido tu solicitud. Te contactaremos a la brevedad.
+          </div>
+
           <form id="supportForm" class="needs-validation" novalidate>
-            <div class="mb-3"><label class="form-label">Nombre</label><input type="text" id="name" class="form-control" required><div class="invalid-feedback">Ingresa tu nombre.</div></div>
-            <div class="mb-3"><label class="form-label">Correo</label><input type="email" id="email" class="form-control" required><div class="invalid-feedback">Ingresa un correo válido.</div></div>
-            <div class="mb-3"><label class="form-label">Mensaje</label><textarea id="message" class="form-control" rows="4" required></textarea><div class="invalid-feedback">Escribe tu mensaje.</div></div>
-            <div class="d-grid"><button class="btn btn-neon" type="submit">Enviar</button></div>
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" id="name" class="form-control form-control--light" placeholder="Tu nombre" required>
+              <div class="invalid-feedback">Ingresa tu nombre.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Correo</label>
+              <input type="email" id="email" class="form-control form-control--light" placeholder="tucorreo@ejemplo.com" required>
+              <div class="invalid-feedback">Ingresa un correo válido.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Mensaje</label>
+              <textarea id="message" class="form-control form-control--light" rows="4" placeholder="Cuéntanos el problema" required></textarea>
+              <div class="invalid-feedback">Escribe tu mensaje.</div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-neon" type="submit">
+                <i class="bi bi-send"></i> Enviar
+              </button>
+              <button class="btn btn-outline-neon" type="button" id="btnVolver">
+                <i class="bi bi-arrow-left"></i> Volver
+              </button>
+            </div>
           </form>
+        </div>
+      </div>
+
+      <!-- Lado derecho: info o imagen (opcional) -->
+      <div class="col-md-6">
+        <div class="card p-4 h-100">
+          <h5 class="mb-3">Horarios y canales</h5>
+          <ul class="mb-0">
+            <li>Atención: Lun a Vie 10:00–18:00</li>
+            <li>WhatsApp: +56 9 1234 5678</li>
+            <li>Correo: soporte@levelup.cl</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top py-4 mt-5">
+    <div class="container text-center text-white-50 small">
+      © <span id="yCopy"></span> LEVEL-UP GAMER — Soporte
+    </div>
+  </footer>
+
+  <!-- Tu JS principal -->
+  <script type="module" src="JS/main.js"></script>
+  <script>
+    // año footer
+    document.getElementById('yCopy').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
