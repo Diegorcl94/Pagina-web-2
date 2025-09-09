@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
   <style>
-    /* Forzar legibilidad sobre fondo negro */
+    
     body, .form-label, .form-control, .form-text, .brand-title, .nav-link, .navbar, .section-title {
       color:#fff !important;
     }
@@ -18,7 +18,7 @@
   </style>
 </head>
 <body data-page="registro">
-  <!-- NAV -->
+  
   <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -41,24 +41,24 @@
     <h1 class="section-title mb-4">Crea tu cuenta</h1>
 
     <form id="registerForm" class="info-card p-4 rounded-4 needs-validation" novalidate>
-      <!-- Aquí se insertan alertas tipo WePlay -->
+      
       <div id="formAlerts"></div>
 
       <div class="row g-3">
-        <!-- Nombre (Requerido, máx 100) -->
+        
         <div class="col-md-6">
           <label class="form-label">Nombre</label>
           <input id="rName" class="form-control" required maxlength="100" placeholder="Tu nombre">
           <div class="invalid-feedback">Campo obligatorio (máx. 100).</div>
         </div>
 
-        <!-- Apellido (opcional; si lo quieres requerido, añade required y maxlength) -->
+       
         <div class="col-md-6">
           <label class="form-label">Apellido</label>
           <input id="rLast" class="form-control" maxlength="100" placeholder="Tu apellido">
         </div>
 
-        <!-- Correo (Requerido, máx 100, dominios permitidos) -->
+        
         <div class="col-12">
           <label class="form-label">Correo</label>
           <input
@@ -73,21 +73,21 @@
           <div class="invalid-feedback">Correo inválido o dominio no permitido.</div>
         </div>
 
-        <!-- Contraseña (Requerido, 4 a 10) -->
+        
         <div class="col-md-6">
           <label class="form-label">Contraseña</label>
           <input id="rPass" type="password" class="form-control" required minlength="4" maxlength="10" placeholder="4 a 10 caracteres">
           <div class="invalid-feedback">Debe tener entre 4 y 10 caracteres.</div>
         </div>
 
-        <!-- Confirmar (opcional; si quieres exigir confirmación, descomenta required) -->
+        
         <div class="col-md-6">
           <label class="form-label">Confirmar contraseña</label>
           <input id="rPass2" type="password" class="form-control" maxlength="10" placeholder="Repite la contraseña">
           <div class="invalid-feedback">Las contraseñas no coinciden.</div>
         </div>
 
-        <!-- Extras opcionales -->
+        
         <div class="col-12">
           <label class="form-label">Código de referido (opcional)</label>
           <input id="rRefCode" class="form-control" placeholder="Ej: ABC123">
@@ -106,11 +106,11 @@
     </form>
   </main>
 
-  <!-- Bootstrap y tu JS principal (no se modifica) -->
+  <!-- Bootstrap y tu JS principal -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="JS/main.js"></script>
 
-  <!-- Validación local SOLO para esta página (sin tocar main.js) -->
+  
   <script>
     (function(){
       const form = document.getElementById('registerForm');
@@ -133,7 +133,7 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // limpiar customValidity previo
+        
         ['rName','rEmail','rPass','rPass2'].forEach(id=>{
           const el = document.getElementById(id);
           if (el) el.setCustomValidity('');
@@ -146,35 +146,34 @@
 
         const errs = [];
 
-        // Nombre: requerido, máx 100
+       
         if (!name) errs.push('• El nombre es obligatorio.');
         if (name.length > 100) errs.push('• El nombre supera los 100 caracteres.');
         if (!name || name.length > 100) document.getElementById('rName').setCustomValidity('invalid');
 
-        // Correo: requerido, máx 100, dominios permitidos
+        
         if (!email) errs.push('• El correo es obligatorio.');
         if (!validAllowedEmail(email)) errs.push('• El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com (máx. 100).');
         if (!email || !validAllowedEmail(email)) document.getElementById('rEmail').setCustomValidity('invalid');
 
-        // Contraseña: requerida, 4 a 10
+        
         if (!pass) errs.push('• La contraseña es obligatoria.');
         if (pass && (pass.length < 4 || pass.length > 10)) errs.push('• La contraseña debe tener entre 4 y 10 caracteres.');
         if (!pass || pass.length < 4 || pass.length > 10) document.getElementById('rPass').setCustomValidity('invalid');
 
-        // Confirmación (si se escribió algo)
         if (pass2 && pass !== pass2) {
           errs.push('• Las contraseñas no coinciden.');
           document.getElementById('rPass2').setCustomValidity('invalid');
         }
 
-        // Mostrar evento tipo WePlay
+        
         if (errs.length){
           showAlert(`<strong>Corrige lo siguiente:</strong><br>${errs.join('<br>')}`, 'danger');
-          form.classList.add('was-validated');  // muestra invalid-feedback en cada campo
+          form.classList.add('was-validated');  
           return;
         }
 
-        // OK (demo)
+        
         showAlert('✅ Cuenta creada correctamente (demo).', 'success');
         form.reset();
         form.classList.remove('was-validated');
