@@ -1,10 +1,4 @@
-/* =========================================================
-   Level-Up Gamer - main.js
-   - Carrito + Catálogo + Registro/Login + Sesión DUOC (20%)
-   - UI dinámica con JS
-   ========================================================= */
 
-/* ===== Utilidades monetarias y constantes ===== */
 const CLP = (n) =>
   Number(n).toLocaleString('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 });
 

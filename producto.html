@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body data-page="productos">
-  <!-- NAV -->
+  
   <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-neon sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -17,7 +17,7 @@
         <span class="brand-title">LEVEL-UP GAMER</span>
       </a>
       <div class="d-flex gap-2">
-        <!-- botón que precarga el filtro de Juegos -->
+        
         <a class="btn btn-outline-neon" href="producto.html?cat=Juegos" aria-label="Ver Juegos">
           <i class="bi bi-controller"></i> Juegos
         </a>
@@ -32,17 +32,17 @@
   <main class="container py-5">
     <h1 class="section-title mb-4">Catálogo</h1>
 
-    <!-- Buscador -->
+   
     <div class="input-group mb-4">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input id="qProducts" class="form-control" placeholder="Buscar por nombre, categoría o código">
     </div>
 
-    <!-- Grilla de productos -->
+    
     <div id="catalogo" class="row g-3"></div>
   </main>
 
-  <!-- Datos del catálogo (disponibles para main.js) -->
+  
   <script>
     window.PRODUCTS = [
       { code:'JM001', category:'Juegos de Mesa', name:'Catan', price:29990, desc:'Clásico de estrategia para 3-4 jugadores.', img:'img/catan.jpg' },
