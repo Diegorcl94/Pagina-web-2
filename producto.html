@@ -17,7 +17,7 @@
         <span class="brand-title">LEVEL-UP GAMER</span>
       </a>
       <div class="d-flex gap-2">
-        <!--  botón que precarga el filtro de Juegos -->
+        <!-- botón que precarga el filtro de Juegos -->
         <a class="btn btn-outline-neon" href="producto.html?cat=Juegos" aria-label="Ver Juegos">
           <i class="bi bi-controller"></i> Juegos
         </a>
@@ -41,6 +41,50 @@
     <!-- Grilla de productos -->
     <div id="catalogo" class="row g-3"></div>
   </main>
+
+  <!-- Datos del catálogo (disponibles para main.js) -->
+  <script>
+    window.PRODUCTS = [
+      { code:'JM001', category:'Juegos de Mesa', name:'Catan', price:29990, desc:'Clásico de estrategia para 3-4 jugadores.', img:'img/catan.jpg' },
+      { code:'JM002', category:'Juegos de Mesa', name:'Carcassonne', price:24990, desc:'Juego de losetas medieval, 2-5 jugadores.', img:'img/carcassoneazul.jpg' },
+      { code:'JM003', category:'Juegos de Mesa', name:'feria de las pulgas', price:19990, desc:'Juego de cartas familiar.', img:'img/feriadelaspulgas.jpg' },
+      { code:'JM004', category:'Juegos de Mesa', name:'Gatitos explosivos', price:15990, desc:'Juego de cartas imaginativo.', img:'img/gatitosexplosivos.jpg' },
+      { code:'JM005', category:'Juegos de Mesa', name:'Monopoly star wars', price:34990, desc:'Versión temática Star Wars.', img:'img/monopolystar.jpg' },
+      { code:'JM006', category:'Juegos de Mesa', name:'Pandemic', price:9990, desc:'Estrategia cooperativa.', img:'img/pandemic.jpg' },
+      { code:'JM007', category:'Juegos de Mesa', name:'Señor de los anillos', price:17990, desc:'Ayuda a Frodo con el anillo.', img:'img/señordelosanillos.jpg' },
+
+      { code:'AC001', category:'Accesorios', name:'Controlador Xbox Series X', price:59990, desc:'Botones mapeables y respuesta táctil.', img:'img/controlxbox.jpg' },
+      { code:'AC002', category:'Accesorios', name:'HyperX Cloud II', price:79990, desc:'Sonido envolvente y comodidad.', img:'img/audifonos.jpg' },
+
+      { code:'CO001', category:'Consolas', name:'PlayStation 5', price:549990, desc:'Sony next-gen.', img:'img/play5.jpg' },
+      { code:'CO002', category:'Consolas', name:'Xbox Series X', price:499990, desc:'Microsoft next-gen.', img:'img/xboxseriesx.jpg' },
+      { code:'CO003', category:'Consolas', name:'Nintendo Switch', price:299990, desc:'Híbrida portátil/escritorio.', img:'img/nintendoswitch.jpg' },
+      { code:'CO004', category:'Consolas', name:'nintendo 64', price:399990, desc:'Clásica de Nintendo.', img:'img/consolanintendo64.jpg' },
+      { code:'CO005', category:'Consolas', name:'Super Nintendo', price:349990, desc:'Clásica de Nintendo.', img:'img/Super-Nintendo-Classic-Mini.png' },
+
+      { code:'CG001', category:'Computadores Gamers', name:'PC Gamer ASUS ROG Strix', price:1299990, desc:'Rendimiento tope.', img:'img/pclenovo.jpg' },
+      { code:'SG001', category:'Sillas Gamers', name:'Secretlab Titan', price:349990, desc:'Ergonómica.', img:'img/sillagamer2.jpg' },
+      { code:'MS001', category:'Mouse', name:'Logitech G502 HERO', price:49990, desc:'Precisión y botones programables.', img:'img/mousegamer.jpg' },
+      { code:'MP001', category:'Mousepad', name:'Razer Goliathus Chroma', price:29990, desc:'RGB personalizable.', img:'img/padgamer.jpg' },
+
+      { code:'jP001', category:'Juegos', name:'pes liga chilena', price:2500, desc:'PS2 clásico PES.', img:'img/pesliga.png' },
+      { code:'jP002', category:'Juegos', name:'Super Mario 64', price:11500, desc:'Aventura 3D.', img:'img/mario64.jpg' },
+      { code:'jP002b', category:'Juegos', name:'Mortal kombat', price:55500, desc:'Peleas legendarias.', img:'img/mortalkombat.jpg' },
+      { code:'jP003', category:'Juegos', name:'Zelda: Tears of the Kingdom', price:45000, desc:'Explora Hyrule.', img:'img/zeldataers.jpg' },
+      { code:'jP004', category:'Juegos', name:'guitar hero cumbia', price:3500, desc:'Cumbias a full.', img:'img/guitarcumbia.jpg' },
+      { code:'jP005', category:'Juegos', name:'Donkey kong country', price:9990, desc:'Plataformas icónico.', img:'img/donkeykongcountry.png' },
+      { code:'jP006', category:'Juegos', name:'Donkey kong 2', price:9990, desc:'La secuela.', img:'img/donkeykong2.jpg' },
+      { code:'jP007', category:'Juegos', name:'Diablo', price:29990, desc:'ARPG clásico.', img:'img/diablo.jpg' },
+      { code:'jP008', category:'Juegos', name:'pepsiman', price:9990, desc:'Plataformas divertido.', img:'img/pepsiman.jpg' },
+
+      { code:'PP001a', category:'Poleras Personalizadas', name:'Polera Assasins Creed', price:14990, desc:'Personalizable.', img:'img/POLERAAssassins_Creed.png' },
+      { code:'PP001b', category:'Poleras Personalizadas', name:"Polera Pibes chorros'", price:14990, desc:'Banda Pibes Chorros.', img:'img/pibeschorros.png' },
+      { code:'PP001c', category:'Poleras Personalizadas', name:"Polera Gamer 'Level-Up'", price:14990, desc:'Con tu gamer tag.', img:'img/poleramujer.png' },
+      { code:'PP001d', category:'Poleras Personalizadas', name:'Polera Doom', price:14990, desc:'Tema DOOM.', img:'img/poleradoom.png' },
+      { code:'PP001e', category:'Poleras Personalizadas', name:'Polera SONIC', price:14990, desc:'Tema Sonic.', img:'img/Polerasonic.png' },
+      { code:'PP001f', category:'Poleras Personalizadas', name:'Polera FORNITE', price:14990, desc:'Tema Fortnite.', img:'img/polerafornite.jpg' },
+    ];
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="JS/main.js"></script>

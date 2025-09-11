@@ -1,7 +1,7 @@
 /* =========================================================
    Level-Up Gamer - main.js
    - Carrito + Catálogo + Registro/Login + Sesión DUOC (20%)
-   - Sin cambios de HTML (UI dinámica con JS)
+   - UI dinámica con JS
    ========================================================= */
 
 /* ===== Utilidades monetarias y constantes ===== */
@@ -12,7 +12,7 @@ const DUOC_DISCOUNT = 0.20;
 const USERS_KEY = 'lug_users_v1';
 const SESSION_KEY = 'lug_session_v1';
 
-/* ===== Carrito (se respeta tu clave 'cart') ===== */
+/* ===== Carrito ===== */
 const getCart = () => JSON.parse(localStorage.getItem('cart') || '[]');
 const setCart = (cart) => localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -54,83 +54,8 @@ function updateCartBadge() {
   badge.style.visibility = count > 0 ? 'visible' : 'hidden';
 }
 
-/* ===== Productos (tu arreglo) ===== */
-const PRODUCTS = [
-  { code: 'JM001', category: 'Juegos de Mesa', name: 'Catan', price: 29990,
-    desc: 'Clásico de estrategia para 3-4 jugadores.', img: 'img/catan.jpg' },
-  { code: 'JM002', category: 'Juegos de Mesa', name: 'Carcassonne', price: 24990,
-    desc: 'Juego de losetas medieval, 2-5 jugadores.', img: 'img/carcassoneazul.jpg' },
-  { code: 'JM003', category: 'Juegos de Mesa', name: 'feria de las pulgas', price: 19990,
-    desc: 'Disfruta de un divertido juego de cartas para toda la familia.', img: 'img/feriadelaspulgas.jpg' },
-  { code: 'JM004', category: 'Juegos de Mesa', name: 'Gatitos explosivos', price: 15990,
-    desc: 'Juego de cartas imaginativo y creativo.', img: 'img/gatitosexplosivos.jpg' },
-  { code: 'JM005', category: 'Juegos de Mesa', name: 'Monopoly star wars', price: 34990,
-    desc: 'Versión del clásico juego de mesa ambientada en el universo Star Wars.', img: 'img/monopolystar.jpg' },
-  { code: 'JM006', category: 'Juegos de Mesa', name: 'Pandemic', price: 9990,
-    desc: 'Juego de estrategia cooperativa para salvar el mundo.', img: 'img/pandemic.jpg' },
-  { code: 'JM007', category: 'Juegos de Mesa', name: 'Señor de los anillos', price: 17990,
-    desc: 'ayuda a frodo a mantener el anillo a salvo.', img: 'img/señordelosanillos.jpg' },
-
-  { code: 'AC001', category: 'Accesorios', name: 'Controlador Xbox Series X', price: 59990,
-    desc: 'Botones mapeables y respuesta táctil mejorada.', img: 'img/controlxbox.jpg' },
-  { code: 'AC002', category: 'Accesorios', name: 'HyperX Cloud II', price: 79990,
-    desc: 'Sonido envolvente y gran comodidad.', img: 'img/audifonos.jpg' },
-    // consolas
-  { code: 'CO001', category: 'Consolas', name: 'PlayStation 5', price: 549990,
-    desc: 'Consola de última generación de Sony.', img: 'img/play5.jpg' },
-  { code: 'CO002', category: 'Consolas', name: 'Xbox Series X', price: 499990,
-    desc: 'Consola de última generación de Microsoft.', img: 'img/xboxseriesx.jpg' },
-  { code: 'CO003', category: 'Consolas', name: 'Nintendo Switch', price: 299990,
-    desc: 'Consola híbrida portátil y de sobremesa.', img: 'img/nintendoswitch.jpg' },
-  { code: 'CO004', category: 'Consolas', name: 'nintendo 64', price: 399990,
-    desc: 'Consola clásica de Nintendo.', img: 'img/consolanintendo64.jpg' },
-  { code: 'CO005', category: 'Consolas', name: 'Super Nintendo', price: 349990,
-    desc: 'Consola clásica de Nintendo.', img: 'img/Super-Nintendo-Classic-Mini.png' },
-    // computadores gamers
-  { code: 'CG001', category: 'Computadores Gamers', name: 'PC Gamer ASUS ROG Strix', price: 1299990,
-    desc: 'Máximo rendimiento para gamers exigentes.', img: 'img/pclenovo.jpg' },
-  { code: 'SG001', category: 'Sillas Gamers', name: 'Secretlab Titan', price: 349990,
-    desc: 'Silla ergonómica para largas sesiones.', img: 'img/sillagamer2.jpg' },
-  { code: 'MS001', category: 'Mouse', name: 'Logitech G502 HERO', price: 49990,
-    desc: 'Mouse de precisión con botones programables.', img: 'img/mousegamer.jpg' },
-  { code: 'MP001', category: 'Mousepad', name: 'Razer Goliathus Chroma', price: 29990,
-    desc: 'Mousepad con RGB personalizable.', img: 'img/padgamer.jpg' },
-    // juegos
-  { code: 'jP001', category: 'Juegos', name: 'pes liga chilena', price: 2500,
-    desc: 'juego para playstation 2 del clasico pes.', img: 'img/pesliga.png' },
-  { code: 'jP002', category: 'Juegos', name: 'Super Mario 64', price: 11500,
-    desc: 'revive la aventura en 3D.', img: 'img/mario64.jpg' },
-  { code: 'jP002b', category: 'Juegos', name: 'Mortal kombat', price: 55500,
-    desc: 'disfruta la continuacion del aclamado juego de pelea.', img: 'img/mortalkombat.jpg' },
-  { code: 'jP003', category: 'Juegos', name: 'The Legend of Zelda: Tears of the Kingdom', price: 45000,
-    desc: 'Explora el reino de Hyrule.', img: 'img/zeldataers.jpg' },
-  { code: 'jP004', category: 'Juegos', name: 'guitar hero cumbia', price: 3500,
-    desc: 'toca las mejores cumbias en este juego creado por fans.', img: 'img/guitarcumbia.jpg' },
-  { code: 'jP005', category: 'Juegos', name: 'Donkey kong country', price: 9990,
-    desc: 'El juego de plataformas más icónico.', img: 'img/donkeykongcountry.png' },
-  { code: 'jP006', category: 'Juegos', name: 'Donkey kong 2', price: 9990,
-    desc: 'La secuela del clásico juego de plataformas pero ahora el dos .', img: 'img/donkeykong2.jpg' },
-  { code: 'jP007', category: 'Juegos', name: 'Diablo', price: 29990,
-    desc: 'El juego de acción y rol más aclamado.', img: 'img/diablo.jpg' },
-  { code: 'jP008', category: 'Juegos', name: 'pepsiman', price: 9990,
-    desc: 'El juego de plataformas más divertido.', img: 'img/pepsiman.jpg' },
-
-    // poleras personalizadas
-  { code: 'PP001b', category: 'Poleras Personalizadas', name: "Polera Pibes chorros'", price: 14990,
-    desc: 'Polera personalizada banda Pibes Chorros.', img: 'img/pibeschorros.png' },
-  { code: 'PP001a', category: 'Poleras Personalizadas', name: "Polera Assasins Creed", price: 14990,
-    desc: 'Polera personalizable de assasins creed.', img: 'img/POLERAAssassins_Creed.png' },
-  { code: 'PP001b', category: 'Poleras Personalizadas', name: "Polera Los Mox'", price: 14990,
-    desc: 'Polera personalizada banda Los MOX.', img: 'img/LOSMOX.png' },
-  { code: 'PP001c', category: 'Poleras Personalizadas', name: "Polera Doom'", price: 14990,
-    desc: 'Polera personalizada Juego Doom.', img: 'img/poleradoom.png' },
-  { code: 'PP001d', category: 'Poleras Personalizadas', name: "Polera Sonic", price: 14990,
-    desc: 'Polera personalizada de Sonic.', img: 'img/Polerasonic.png' },
-  { code: 'PP001e', category: 'Poleras Personalizadas', name: "Polera FORNITE", price: 14990,
-    desc: 'Polera personalizada de FORNITE.', img: 'img/polerafornite.jpg' },
-  { code: 'PP001c', category: 'Poleras Personalizadas', name: "Polera Gamer 'Level-Up'", price: 14990,
-    desc: 'Polera personalizable con tu gamer tag.', img: 'img/poleramujer.png' },
-];
+/* ===== Productos (tomados desde el HTML) ===== */
+const PRODUCTS = Array.isArray(window.PRODUCTS) ? window.PRODUCTS : [];
 
 /* ===== Navbar reactiva (perfil / cerrar sesión) ===== */
 function renderAuthUI() {
@@ -154,7 +79,6 @@ function renderAuthUI() {
     btnOut.innerHTML = '<i class="bi bi-box-arrow-right"></i> Cerrar sesión';
     btnOut.addEventListener('click', () => {
       clearSession();
-      // localStorage.removeItem('cart'); // si quisieras que el carrito sea por usuario
       location.reload();
     });
 
@@ -252,7 +176,6 @@ function initCatalogFilters() {
       const matchTerm = !term || haystack.includes(term);
       return matchCat && matchTerm;
     });
-    // activar visualmente la píldora seleccionada
     pills.querySelectorAll('button').forEach(x => x.classList.remove('active'));
     (pills.querySelector(`[data-cat="${activeCat}"]`) || pills.querySelector('[data-cat="ALL"]'))?.classList.add('active');
     renderCatalog(filtered);
@@ -267,16 +190,16 @@ function initCatalogFilters() {
 
   q.addEventListener('input', apply);
 
-  // --- NUEVO: filtro inicial por parámetro ?cat=... (ej: ?cat=Juegos) ---
+  // Filtro inicial por parámetro ?cat=...
   const paramCat = new URLSearchParams(location.search).get('cat');
   if (paramCat && cats.includes(paramCat)) {
     activeCat = paramCat;
   }
 
-  apply(); // primera carga con filtro (o ALL)
+  apply();
 }
 
-/* ===== Carrito (descuento sólo si sesión DUOC) ===== */
+/* ===== Carrito (DUOC aplica 20%) ===== */
 const renderCartPage = () => {
   const list = document.getElementById('cartList');
   const sSubtotal = document.getElementById('cSubtotal');
@@ -369,15 +292,6 @@ function initLoginPage() {
 }
 
 /* ===== Registro ===== */
-function ageFrom(dateStr){
-  const d = new Date(dateStr);
-  if (isNaN(d)) return 0;
-  const t = new Date();
-  let age = t.getFullYear() - d.getFullYear();
-  const m = t.getMonth() - d.getMonth();
-  if (m < 0 || (m === 0 && t.getDate() < d.getDate())) age--;
-  return age;
-}
 function passwordStrength(p){
   let score = 0;
   if (p.length >= 6) score++;
@@ -398,7 +312,6 @@ function showAlert($where, type, html) {
   box.innerHTML = html;
   $where.appendChild(box);
 }
-
 function initRegisterPage() {
   const form = document.getElementById('registerForm');
   if (!form) return;
@@ -505,7 +418,6 @@ function initSupportPage() {
   const notice = document.getElementById('supportNotice');
   const btnVolver = document.getElementById('btnVolver');
 
-  // Botón Volver: vuelve al historial o al inicio si no hay historial
   if (btnVolver) {
     btnVolver.addEventListener('click', () => {
       if (history.length > 1) history.back();
@@ -518,23 +430,18 @@ function initSupportPage() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Bootstrap validation simple
     if (!form.checkValidity()) {
       form.classList.add('was-validated');
       return;
     }
 
-    // "Evento" de envío: mostramos un texto de confirmación estilo tienda (WePlay-like)
     if (notice) {
       notice.classList.remove('d-none');
-      // opcional: auto-ocultar después de unos segundos
       setTimeout(() => notice.classList.add('d-none'), 4500);
     } else {
       alert('¡Gracias! Hemos recibido tu solicitud. Te contactaremos a la brevedad.');
     }
 
-    // Aquí podrías enviar a tu backend (fetch) si luego conectas un servicio real.
-    // Por ahora, solo reiniciamos el formulario para el demo:
     form.reset();
     form.classList.remove('was-validated');
   });
